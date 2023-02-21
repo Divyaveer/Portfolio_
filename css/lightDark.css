@@ -1,0 +1,170 @@
+/* Dark Light Mode Section Starts */
+body.active{
+    background: #06043e;
+    color: #fff;
+}
+
+/* Header Section Starts */
+body.active .header{
+    background: #06043e;
+    color: #fff;
+}
+
+body.active .navbar-link{
+    color: #fff;
+}
+
+body.active .navbar-link:hover{
+    color: var(--helper);
+}
+
+/* Hero Section Starts */
+body.active .section-hero{
+    background: #06043e;
+    color: #fff;
+}
+
+body.active .section-hero-data h1{
+    color: #fff;
+}
+
+/* Resume section Starts */
+body.active .section-resume{
+    background: #4037dd66;
+}
+
+body.active .resume-data-subsection{
+    color: #fff;
+}
+
+/* Bio-Data Section Starts */
+body.active .section-biodata{
+    background: #06043e;
+}
+
+/* Portfolio Section Starts */
+body.active .section-portfolio{
+    background: #06043e;
+}
+
+/* Service Section Starts */
+body.active .service-box{
+    background: #4037dd66;
+}
+
+body.active .service-icon{
+    color: #fff;
+}
+
+/* Testimonial Section Starts */
+body.active .swiper-client-msg{
+    background: #4037dd66;
+}
+
+body.active .swiper-client-msg::before{
+    border-top-color: #4037dd66;
+}
+
+/* Footer Section Starts */
+body.active .section-footer{
+    background: #4037dd66;
+}
+
+/* Dark Light Mode Section Ends */
+
+.section-darkLight{
+    height: auto;
+    width: 100vw;
+    display: flex;
+    transition: 1s ease-in-out;
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    z-index: 100000;
+}
+
+.section-darkLight label{
+    position: relative;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.section-darkLight label input{
+    position: relative;
+    z-index: 1;
+    appearance: none;
+}
+
+.section-darkLight label span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #06043e;
+    border-radius: 80px;
+    transition: .5s ease-in-out;
+    box-shadow: 0 7.5px 12.5px #06043e66;
+}
+
+.section-darkLight label input:checked ~ span{
+    background: #fff;
+    box-shadow: 0 7.5px 12.5px #fff6;
+}
+
+.section-darkLight label span i{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #4037dd;
+    transition: .5s ease-in-out;
+}
+
+.section-darkLight label input:checked ~  span i{
+    left: 43px;
+    background: #8d8d92;
+}
+
+.section-darkLight label span i::before{
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 7px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #06043e;
+    box-shadow: 17px 0 0 #06043e;
+    transition: .5s ease-in-out;
+}
+
+.section-darkLight label input:checked ~ span i::before{
+    background: #fff;
+    box-shadow: 17px 0 0 #fff;
+}
+
+.section-darkLight label span i::after{
+
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    left: calc(50% - 7.5px);
+    width: 15px;
+    height: 3px;
+    border-radius: 3px;
+    background: #06043e;
+    transition: .5s ease-in-out;
+}
+
+.section-darkLight label input:checked ~ span i::after{
+    bottom: 6px;
+    height: 7.5px;
+    border-radius: 0;
+    border-bottom-left-radius: 7.5px;
+    border-bottom-right-radius: 7.5px;
+    background: #fff;
+}
