@@ -1,0 +1,2360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Portfolio website to showcase the work I have done so far, the services I provide and all my professionals life">
+    <meta name="keywords" content="HTML, CSS, JAVASCRIPT, JS, portfolio Website">
+    <meta name="author" content="Thapa Tecnical">
+    <title>ProfWebsite</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Work+Sans:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+:root{
+    --heading: rgb(0 10 45);
+  --para: #777777;
+  --para-tint: #e4e4e4;
+  --black: #212529;
+  --white: #f4f4f4;
+  --third: #fff;
+  --helper: #8490ff;
+  --overlay: #3e64ff;
+  --helper-tint: #f3f4ff;
+  --bg: rgb(249 249 255);
+  --icon-bg: rgba(144,172,209,.2);
+  --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+  --gradientSupport: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  --shadow: 0px 0px 20px 0px rgb(132 144 255 / 20%);
+  --shadowSupport: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+}
+
+html{
+    font-size: 62.5%;
+    /* scroll-behavior: smooth; */
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    color: var(--heading);
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+p{
+    color: var(--para);
+    line-height: 1.6;
+    font-size: 1.7rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+/* =====================
+Header Section Start
+===================== */
+
+.header{
+    padding: 1rem 4.8rem;
+    height: 9rem;
+    background: var(--bg);
+    /* background: #f00; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo{
+    height: 3rem;
+}
+
+/* Analog Clock */
+
+.clock{
+    width: 8em;
+    height: 8em;
+    background: #0009;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clock .number{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 1.01rem;
+    transform: rotate(var(--rotation));
+}
+
+.clock .number1{--rotation: 30deg;}
+.clock .number2{--rotation: 60deg;}
+.clock .number3{--rotation: 90deg;}
+.clock .number4{--rotation: 120deg;}
+.clock .number5{--rotation: 150deg;}
+.clock .number6{--rotation: 180deg;}
+.clock .number7{--rotation: 210deg;}
+.clock .number8{--rotation: 240deg;}
+.clock .number9{--rotation: 270deg;}
+.clock .number10{--rotation: 300deg;}
+.clock .number11{--rotation: 330deg;}
+
+.clock .number1 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number2 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number3 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number4 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number5 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number6 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number7 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number8 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number9 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number10 div{transform: rotate(calc(var(--rotation) * -1));}
+.clock .number11 div{transform: rotate(calc(var(--rotation) * -1));}
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    background: #000;
+    border-radius: 50%;
+    z-index: 11;
+    transform: translate(-50%, -50%);
+}
+
+.clock .hand.second{
+    width: 3px;
+    height: 45%;
+    background: #ff0;
+}
+
+.clock .hand.minute{
+    width: 4px;
+    height: 40%;
+    background: #000;
+}
+
+.clock .hand.hour{
+    width: 6px;
+    height: 40%;
+    background: #000;
+}
+
+.navbar-lists{
+    display: flex;
+    gap: 4.8rem;
+}
+
+.navbar-link:link,
+.navbar-link:visited{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--black);
+    transition: all .3s linear;
+}
+
+.navbar-link:hover,
+.navbar-link:active{
+    color: var(--helper);
+}
+
+.mobile-navbar-btn{
+    display: none;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.mobile-nav-icon[name="close-outline"]{
+    display: none;
+}
+
+/* ?sticky Navbar */
+
+.sticky .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(255,255,255,1);
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: var(--shadow);
+}
+
+.sticky .section-hero{
+    margin-top: 9rem;
+}
+
+/* =====================
+Resuable Code Section
+===================== */
+
+.section{
+    padding: 9rem 0;
+}
+
+.container{
+    max-width: 140rem;
+    margin: 0 auto;
+    /* margin-left: 6rem; */
+}
+
+.grid{
+    display: grid;
+    gap: 9rem;
+}
+
+.grid-two-column{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-column{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-column{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.btn{
+    background: var(--gradientSupport);
+    padding: 1.6rem 3.2rem;
+    border: none;
+    color: var(--helper-tint);
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+}
+
+.btn:hover, .btn:active{
+    box-shadow: var(--shadowSupport);
+}
+
+.common-heading{
+    font-size: 4.8rem;
+    font-weight: 600;
+    margin-bottom: 6rem;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.common-heading::before{
+    content: '';
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 1.5rem;
+    border-radius: 50%; 
+    height: 1.5rem;
+    background: var(--helper);
+}
+
+.common-heading::after{
+    content: '';
+    position: absolute;
+    top: 118%;
+    left: 1.5rem;
+    min-width: 20rem;
+    height: .3rem;
+    background: var(--helper);
+}
+
+/* =====================
+Hero Section Start
+===================== */
+
+.section-hero{
+    background-color: var(--bg);
+}
+
+.section-hero-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-start; */
+}
+
+.hero-top-data{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--helper);
+}
+
+.hero-heading{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 6.4rem;
+}
+
+.hero-para{
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+    max-width: 60rem;
+}
+
+.section-hero-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+picture{
+    text-align: center;   
+}
+
+.hero-img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* =====================
+Bio Section Start
+===================== */
+
+body.sticky > .section-biodata{
+    margin-top: 3rem;
+}
+
+.section-biodata{
+    background: var(--bg);
+}
+
+.bio-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio-image img{
+    width: 65%;
+    height: 80%;
+    box-shadow: -2rem -2rem 0 0 var(--helper);
+    display: inline-block;
+}
+
+.bio-data-stats{
+    display: flex;
+    padding: 6.4rem 0;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.bio-stats h3{
+    margin-bottom: 1rem;
+}
+
+.bio-progress-bar{
+    width: 90%;
+    height: .8rem;
+    background: var(--para-tint);
+    border-radius: 10rem;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.bio-progress-bar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: inherit;
+    background: var(--gradientSupport);
+    border-radius: 10rem;
+}
+
+.bio-progress-bar.progress::before{
+    animation: progress 2s ease-in-out 1;
+}
+
+@keyframes progress {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.bio-progress-2::before{
+    width: 99%;
+}
+
+.bio-progress-3::before{
+    width: 90%;
+}
+
+.bio-progress-4::before{
+    width: 85%;
+}
+
+.bio-progress-5::before{
+    width: 70%;
+}
+
+.bio-progress-bar span{
+    position: absolute;
+    top: 1.8rem;
+    width: 4rem;
+    height: 2rem;
+    background: var(--helper);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: 0;
+    transform: translateX(-50%);
+}
+
+.bio-progress-bar.progress span{
+    animation: caretMove 2s ease-in-out 1;
+}
+
+@keyframes caretMove{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.bio-progress-bar span{
+    left: 80%;
+}
+
+.bio-progress-2 span{
+    left: 99%;
+}
+
+.bio-progress-3 span{
+    left: 90%;
+}
+
+.bio-progress-4 span{
+    left: 85%;
+}
+
+.bio-progress-5 span{
+    left: 70%;
+}
+
+/* to create caret */
+.bio-progress-bar span::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: .8rem solid transparent;
+    border-bottom-color: var(--helper);
+    top: -1.6rem;
+}
+
+/* ===========================================
+Resume Section
+======================================= */
+
+.section-resume {
+    background: #fff;
+}
+  
+.resume-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.resume-img img {
+    width: 80%;
+    box-shadow: -2rem 2rem 0 0 var(--helper);
+    /* box-shadow: var(--shadpw) */
+}
+  
+.resume-para {
+    font-size: 2.4rem;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    color: var(--heading);
+}
+  
+.resume-data-subsection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4.8rem;
+    margin-top: 4.4rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--para-tint);
+}
+  
+.resume-data-left .grid {
+    gap: 1.5rem;
+}
+  
+.resume-data-left .grid p,
+.resume-data-right p {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+  
+.resume-data-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+  
+.resume-data-right .resume-data-button {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: var(--helper);
+    padding: 0.3rem 0;
+    min-width: 50%;
+    background: #f3f4ff;
+    border-radius: 10rem;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+  
+.resume-data-bottom-subsection {
+    margin-top: 4.8rem;
+}
+  
+.resume-data-bottom-subsection .margin-small {
+    margin-top: 1.8rem;
+}
+  
+.resume-data-bottom-subsection .resume-data-button {
+    width: 80%;
+}
+  
+
+/* =====================
+Portfolio Section Start
+===================== */
+
+.section-portfolio{
+    background-color: var(--bg);
+    transition: all .7s linear;
+}
+
+.section-portfolio p{
+    max-width: 60rem;
+}
+
+.p-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+    margin: 6.4rem 0;
+}
+
+.portfolio-images{
+    gap: 3.2rem;
+    /* margin-top: 6.4rem; */
+}
+
+.portfolio-images img{
+    width: 100%;
+    border-radius: .7rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-overlay{
+    position: relative;
+    overflow: hidden;
+}
+
+.img-overlay .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradientSupport);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: all .3s linear;
+    border-radius: .7rem;
+}
+
+.img-overlay:hover > .overlay{
+    transform: translateY(0);
+    opacity: .8;
+    cursor: pointer;
+}
+
+.img-overlay .common-heading{
+    margin: 0;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.p-btn-active{
+    transform: translateY(-1rem);
+}
+
+.p-image-not-active{
+    display: none;
+}
+
+/* =====================
+Work Data Section Start
+===================== */
+
+.section-work-data{
+    background: var(--gradientSupport);
+    text-align: center;
+    transition: all .7s linear;
+    color: var(--white);
+}
+
+.counter-numbers{
+    font-size: 4.8rem;
+}
+
+.section-work-data p{
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+/* =====================
+Service Section Start
+===================== */
+.section-services{
+    transition: all .7s linear;
+}
+
+.section-services p{
+    max-width: 60rem;
+}
+
+.section-services .grid{
+    margin-top: 10rem;
+    row-gap: 10rem;
+}
+
+.service-box{
+    text-align: center;
+    box-shadow: var(--shadow);
+    border-radius: .5rem;
+    padding: 6.4rem 3.4rem;
+    transition: all .2s linear;
+}
+
+.service-box:hover,
+.service-box:active{
+    transform: translateY(-3rem);
+}
+
+.service-icon{
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--icon-bg);
+    display: inline-block;
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    padding: 1.5rem 1.8rem;
+    position: relative;
+    color: var(--heading);
+    animation: water-wave 3s linear infinite;
+}
+
+.service-icon::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    background-color: transparent;
+    border: 1px solid var(--black);
+    animation: water-wave 3s linear infinite;
+}
+
+@keyframes water-wave{
+    0%{
+        border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    }
+    50%{
+        border-radius: 3% 97% 15% 85% / 72% 0% 100% 28%;
+        /* transform: rotate(360deg); */
+    }
+    100%{
+        border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+    }
+}
+
+.service-box h3{
+    text-transform: capitalize;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* =====================
+Testimonial Section Start
+===================== */
+.swiper {
+    width: 100%;
+    height: 100%;
+    margin-top: 9rem;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-client-msg{
+    padding: 5rem 8rem;
+    background: var(--white);
+    border-radius: 1rem;
+    text-align: left;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.swiper-client-msg::before{
+    content: '';
+    position: absolute;
+    bottom: -10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5rem solid var(--white);
+    border-color: transparent;
+    border-top-color: var(--helper-tint);
+}
+
+.swiper-client-msg p::before{
+    content: "\f10d";
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    font-size: 5rem;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #ced3ff;
+}
+
+.swiper-client-msg p::after{
+    content: "\f10e";
+    position: absolute;
+    bottom: 0;
+    right: 2rem;
+    font-size: 5rem;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #ced3ff;
+}
+
+.swiper-client-data{
+    align-items: center;
+    margin-top: 3.2rem;
+    gap: 3.2rem;
+}
+
+.swiper-slide img{
+    max-width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: .5rem solid var(--helper-tint);
+}
+
+/* =====================
+Freelancing Section Start
+===================== */
+
+.section-freelancing{
+    background-image: url('../images/folio/3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    transition: all .7s linear;
+    text-align: center;
+}
+
+.section-freelancing .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay);
+    /* background: #3e64ff; */
+    opacity: .7;
+}
+
+.section-freelancing .container{
+    position: relative;
+}
+
+.section-freelancing h2{
+    font-size: 5.4rem;
+}
+
+.section-freelancing span{
+    color: #a0f669;
+}
+
+.section-freelancing h2,
+.section-freelancing p{
+    color: var(--white);
+    margin-bottom: 1.8rem;
+}
+
+/* =====================
+Contact Us Section Start
+===================== */
+
+.section-contact-main{
+    max-width: 70rem;
+    margin: 0 auto;
+    margin-top: 9rem;
+    transition: all .3s linear;
+}
+
+.section-contact-main .grid{
+    gap: 3.2rem;
+}
+
+.section-contact-main form{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.section-contact-main input,
+.section-contact-main textarea{
+    padding: 1.5rem 2rem;
+    border: .1rem solid #c9c9c9;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-family: "work sans";
+    width: 100%;
+}
+
+.section-contact-main input[type="submit"]{
+    max-width: 30%;
+    border: none;
+}
+
+/* =====================
+Footer Section Start
+===================== */
+
+.section-footer{
+    background: var(--heading);
+    transition: all .7s linear;
+}
+
+.section-footer h3{
+    color: var(--white);
+    margin-bottom: 4rem;
+}
+
+.f-about p{
+    color: #adadad;
+}
+
+.f-links ul,
+.f-services ul,
+.f-address address{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    justify-content: center;
+}
+
+.f-links li,
+.f-links a,
+.f-services li,
+.f-services a{
+    font-size: 1.8rem;
+    color: #adadad;
+    text-transform: capitalize;
+}
+
+.f-links span,
+.f-services span,
+.f-address span{
+    margin-right: 1rem;
+}
+
+.f-address p,
+.f-address p a{
+    font-style: normal;
+    color: #adadad;
+}
+
+.f-social-icons{
+    margin: 5rem 0;
+    text-align: center;
+    color: #adadad;
+}
+
+.f-social-icons .icons{
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--icon-bg);
+    display: inline-block;
+    padding: 1.4rem 1.8rem;
+    position: relative;
+    color: var(--white);
+    animation: water-wave 3s linear infinite;
+    cursor: pointer;
+}
+
+.f-credits p{
+    text-align: center;
+    color: #adadad;
+}
+
+.footer a:hover,
+.footer a:active{
+    color: var(--white);
+}
+
+/* =====================
+Scroll to Top Button Section Start
+===================== */
+
+.scrollTop-style{
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    z-index: 1;
+}
+
+.scroll-top{
+    width: 4rem;
+    height: 4rem;
+    background: var(--helper);
+    display: inline-block;
+    padding: 1.4rem 1.8rem;
+    position: relative;
+    color: var(--white);
+    animation: water-wave 3s linear infinite;
+    cursor: pointer;
+}
+
+/* =================================
+Media Queries
+================================= */
+
+@media (max-width: 95em){
+    .container{
+        max-width: 130rem;
+        padding: 0 3.2rem;
+    }
+
+    .navbar-lists{
+        gap: 3.4rem;
+    }
+}
+
+@media (max-width: 77.5em){
+    html{
+        font-size: 56.25%;
+    }
+
+    .container{
+        max-width: 110rem;
+    }
+
+    .grid{
+        gap: 4.8rem;
+    }
+}
+
+@media (max-width: 980px) {
+    
+    html{
+        font-size: 50%;
+    }
+
+    .header{
+        position: relative;
+    }
+
+    .mobile-navbar-btn{
+        display: block;
+        z-index: 9999;
+        border: 3px solid var(--black);
+        color: #212529;
+    }
+
+    .mobile-nav-icon{
+        width: 5rem;
+        height: 5rem;
+        color: var(--black);
+    }
+
+    .header .logo{
+        width: 40%;
+    }
+
+    .navbar{
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--gradient);
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transform: translateX(100%);
+        transition: all .5s linear;
+
+        /* display: none; */
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 999;
+    }
+
+    .navbar-lists{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .navbar-lists .navbar-link:link,
+    .navbar .navbar-lists .navbar-link:visited{
+        color: #212529;
+        font-size: 3.2rem;
+    }
+
+    .active .navbar{
+        transform: translateX(0%);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"]{
+        display: none;
+    }
+
+    .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"]{
+        display: block;
+    }
+
+    .section-hero h1{
+        line-height: 1.05;
+    }
+
+    .section-services .grid{
+        gap: 9rem;
+    }
+
+    .section-services .grid-three-column{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-footer .grid-four-column{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .img-overlay .common-heading{
+        font-size: 3.2rem;
+    }
+
+    .img-overlay .common-heading::before,
+    .img-overlay .common-heading::after{
+        content: '';
+        width: 0;
+        height: 0;
+    }
+
+    /* Resume Section Start */
+    .section-resume .grid-two-column {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-resume .grid-two-column img {
+        width: 50%;
+    }
+    .resume-img {
+        grid-row: 2;
+        transform: translateY(-2rem);
+    }
+}
+
+@media (max-width: 49em){
+    .container{
+        max-width: 71rem;
+    }
+
+    .section-hero .grid-two-column{
+        grid-template-columns: 1fr;
+    }
+
+    .section-hero-data{
+        align-items: center;
+    }
+
+    .hero-para{
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .section-hero img{
+        width: 70%;
+    }
+
+    .section-biodata .grid-two-column{
+        grid-template-columns: 1fr;
+    }
+
+    .section-biodata .bio-image{
+        grid-row: 2;
+        margin-top: 3.2rem;
+    }
+
+    .section-biodata .bio-image img{
+        width: 50%;
+    }
+
+    /* Portfolio Section */
+    .section-portfolio .grid-three-column{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Work Data */
+    .section-work-data .grid-four-column{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Below 560px */
+@media (max-width: 35em){
+    /* .container{
+        max-width: 48rem;
+    } */
+
+    .header{
+        padding: 0 3.2rem;
+    }
+
+    .header .logo{
+        width: 50%;
+    }
+
+    /* portifolio */
+    .p-btns{
+        gap: 2.8rem;
+    }
+
+    .btn{
+        padding: 1rem 2rem;
+    }
+
+    .img-overlay .common-heading{
+        font-size: 2.2rem;
+    }
+
+    .counter-numbers{
+        font-size: 3.2rem;
+    }
+
+    /* Services Section */
+    .section-services .grid-three-column{
+        grid-template-columns: 1fr;
+    }
+
+    .section-freelancing h2{
+        font-size: 3rem;
+    }
+
+    .contact-container{
+        padding: 0 3.2rem;
+    }
+    
+    .contact-container .grid-two-column{
+        grid-template-columns: 1fr;
+    }
+
+    .section-contact-main input[type="submit"]{
+        max-width: 40%;
+    }
+
+    /* Footer Section */
+    .section-footer .f-about,
+    .section-footer .f-address{
+        grid-column: 1/-1;
+    }
+}
+
+/* Below 390px */
+@media (max-width: 390px){
+    .clock{
+        display: none;
+    }
+}
+    </style>
+    <!-- <script src="index.js" defer></script> -->
+    <!-- <script src="animation.js" defer></script> -->
+</head>
+<body>
+    <!-- =====================
+    Header Section Start
+    ===================== -->
+
+    <header class="header">
+        <img src="images/Logo2.png" alt="Our main logo" class="logo">
+
+        <div class="clock">
+            <div class="hand hour" data-hour-hand></div>
+            <div class="hand minute" data-minute-hand></div>
+            <div class="hand second" data-second-hand></div>
+            <div class="number number1"><div>1</div></div>
+            <div class="number number2"><div>2</div></div>
+            <div class="number number3"><div>3</div></div>
+            <div class="number number4"><div>4</div></div>
+            <div class="number number5"><div>5</div></div>
+            <div class="number number6"><div>6</div></div>
+            <div class="number number7"><div>7</div></div>
+            <div class="number number8"><div>8</div></div>
+            <div class="number number9"><div>9</div></div>
+            <div class="number number10"><div>10</div></div>
+            <div class="number number11"><div>11</div></div>
+            <div class="number number12"><div>12</div></div>
+        </div>
+
+        <nav class="navbar">
+            <ul class="navbar-lists">
+                <li><a href="#" class="navbar-link home-link">Home</a></li>
+                <li><a href="about.html" class="navbar-link about-link">About</a></li>
+                <li><a href="service.html" class="navbar-link service-link">Services</a></li>
+                <li><a href="#portfolio" class="navbar-link portfolio-link">Portfolio</a></li>
+                <li>
+                    <a href="contact.html" class="navbar-link contact-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-navbar-btn">
+            <ion-icon class="mobile-nav-icon" name="menu-outline"></ion-icon>
+            <ion-icon class="mobile-nav-icon" name="close-outline"></ion-icon>
+        </div>
+    </header>
+
+    <!-- =====================
+    Our Main Hero Section Start
+    ===================== -->
+
+    <main>
+        <section class="section-hero section">
+            <div class="container grid grid-two-column">
+                <div class="section-hero-data">
+                    <p class="hero-top-data">This is Me</p>
+                    <h1 class="hero-heading">divyaveer kumar</h1>
+                    <p class="hero-para">I'm <b>Divyaveer</b>. I'm from <b>Ahmedabad, Gujarat (India)</b>. A Full Stack Web Developer, Youtuber and Freelancer. Actually, I'm a <b>Full Stack Web Developer, Youtuber and Freelancer</b>.
+                    </p>
+                    <div>
+                        <a class="btn hireme-btn">Hire Me</a>
+                    </div>
+                </div>
+                <!-- Hero section right side -->
+                <div class="section-hero-image">
+                    <img 
+                        src="https://scontent.fnag1-3.fna.fbcdn.net/v/t39.30808-6/331603348_1387307782043501_2118144164344836122_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=K9VvcOdhveMAX9kP1Ez&_nc_ht=scontent.fnag1-3.fna&oh=00_AfDBAxaMApWZgItEyUMqsJIa6yE8rLhdwacvfMUoorF5Hw&oe=63F41F7A"
+                        alt="this is me DAKS:CODING" 
+                        class="hero-img"
+                    >
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================================== 
+          Our Resume Section Start  
+    ========================================  -->
+    <section class="section-resume section " >
+        <div class="container grid grid-two-column">
+          <!-- resume left side  -->
+          <div class="resume-img">
+            <img src="https://scontent.fpnq13-4.fna.fbcdn.net/v/t39.30808-6/332016458_516662303885140_8392929918538124818_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=OeIZeYH6A6QAX9rTNE0&_nc_ht=scontent.fpnq13-4.fna&oh=00_AfDq_uQMD_8xFqH9H2fyuw0I0EdNP_N0MbObUtEca1TDtw&oe=63F45D63" alt="my resume pic" 
+              data-src="images/biodata.jpg"
+              loading="lazy"
+              class="lazy-img"
+            />
+          </div>
+  
+          <!-- resume right side  -->
+          <div class="resume-data">
+            <h2 class="common-heading">resume</h2>
+            <p class="resume-para">my work experience</p>
+  
+            <div class="resume-data-subsection">
+              <div class="resume-data-left">
+                <h3>Online educator on Youtuber</h3>
+                <div class="grid grid-two-column">
+                  <p>
+                    <ion-icon name="business-outline"></ion-icon> Divyaveer, Inc.
+                  </p>
+                  <p>
+                    <ion-icon name="location-outline"></ion-icon> Pune, India
+                  </p>
+                </div>
+              </div>
+  
+              <div class="resume-data-right">
+                <p class="resume-data-button">fulltime</p>
+                <p>
+                  <ion-icon name="calendar-outline"></ion-icon>  <span>April 2018 - Present </span
+                  > 
+                </p>
+              </div>
+            </div>
+  
+            <!-- 2nd work experience  -->
+            <div class="resume-data-subsection">
+              <div class="resume-data-left">
+                <h3>Senior Front End Developer</h3>
+                <div class="grid grid-two-column">
+                  <p>
+                    <ion-icon name="business-outline"></ion-icon> Facebook, Inc.
+                  </p>
+                  <p>
+                    <ion-icon name="location-outline"></ion-icon> San Francisco
+                  </p>
+                </div>
+              </div>
+  
+              <div class="resume-data-right">
+                <p class="resume-data-button">fulltime</p>
+                <p>
+                  <ion-icon name="calendar-outline"></ion-icon> November 2021 -
+                  Present
+                </p>
+              </div>
+            </div>
+  
+            <!-- 3rd work experience  -->
+            <div class="resume-data-subsection">
+              <div class="resume-data-left">
+                <h3>Senior Front End Developer</h3>
+                <div class="grid grid-two-column">
+                  <p>
+                    <ion-icon name="business-outline"></ion-icon> Facebook, Inc.
+                  </p>
+                  <p>
+                    <ion-icon name="location-outline"></ion-icon> San Francisco
+                  </p>
+                </div>
+              </div>
+  
+              <div class="resume-data-right">
+                <p class="resume-data-button">fulltime</p>
+                <p>
+                  <ion-icon name="calendar-outline"></ion-icon>November 2021 -
+                  Present
+                </p>
+              </div>
+            </div>
+  
+            <!-- 4th work experience  -->
+            <div class="resume-data-subsection">
+              <div class="resume-data-left">
+                <h3>Senior Front End Developer</h3>
+                <div class="grid grid-two-column">
+                  <p>
+                    <ion-icon name="business-outline"></ion-icon> Facebook, Inc.
+                  </p>
+                  <p>
+                    <ion-icon name="location-outline"></ion-icon> San Francisco
+                  </p>
+                </div>
+              </div>
+  
+              <div class="resume-data-right">
+                <p class="resume-data-button">fulltime</p>
+                <p>
+                  <ion-icon name="calendar-outline"></ion-icon>November 2021 -
+                  Present
+                </p>
+              </div>
+            </div>
+         
+            <!-- Education section  -->
+            <div class="resume-data-bottom-subsection"> 
+              <p class="resume-para">Education</p> 
+           
+              <!-- 1st college  -->
+              <div class="resume-data-subsection margin-small">
+                <div class="resume-data-left">
+                  <h3>Master in Computer Science</h3>
+                  <div class="grid grid-two-column">
+                    <p>
+                      <ion-icon name="business-outline"></ion-icon> Wadia College, Inc.
+                    </p>
+                    <p>
+                      <ion-icon name="location-outline"></ion-icon> Pune, MH
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="resume-data-right">
+                  <p class="resume-data-button"> Masters</p>
+                  <p>
+                    <ion-icon name="calendar-outline"></ion-icon>  <span>May 2016 - 2018 </span
+                    > 
+                  </p>
+                </div>
+              </div>
+  
+               <!-- 2nd college  -->
+              <div class="resume-data-subsection ">
+                <div class="resume-data-left">
+                  <h3>Bachelor in Computer Science</h3>
+                  <div class="grid grid-two-column">
+                    <p>
+                      <ion-icon name="business-outline"></ion-icon> Wadia College, Inc.
+                    </p>
+                    <p>
+                      <ion-icon name="location-outline"></ion-icon> Pune, MH
+                    </p>
+                  </div>
+                </div>
+  
+                <div class="resume-data-right">
+                  <p class="resume-data-button"> Bachelor </p>
+                  <p>
+                    <ion-icon name="calendar-outline"></ion-icon>  <span>May 2012 - 2015 </span
+                    > 
+                  </p>
+                </div>
+              </div>
+              <!-- end  -->
+            </div>
+          </div>
+        </div>
+        
+    </section>
+  
+    <!-- =====================
+    Our Bio Data Section Start
+    ===================== -->
+
+    <section class="section-biodata section">
+        <div class="container grid grid-two-column">
+            <div class="bio-image">
+                <img src="https://scontent.fnag1-2.fna.fbcdn.net/v/t39.30808-6/331084842_2958261957652106_1430952653069254317_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=8yHpZ5QOQxcAX9oYeDS&_nc_ht=scontent.fnag1-2.fna&oh=00_AfBZc_gfg_DZX_p0Emw1DuArQden7jrhzW3SdeGDKQaf5A&oe=63F4A305" alt="my bio data image">
+            </div>
+            <!-- Bio right side data -->
+            <div class="bio-data">
+                <h2 class="common-heading">my bio-data</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo nisi nobis eum culpa natus cupiditate laborum quisquam repellat magni cumque ipsum, pariatur distinctio sunt, id nesciunt? Atque.
+                </p>
+                <br>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa porro ipsam corrupti quis possimus fuga soluta facilis tempora voluptatibus expedita!
+                </p>
+                <div class="bio-data-stats">
+                    <div class="bio-stats">
+                        <h3>Design</h3>
+                        <div class="bio-progress-bar">
+                            <span class="num_caret" data-number="80">80%</span>
+                        </div>
+                    </div>
+                    <div class="bio-stats">
+                        <h3>HTML</h3>
+                        <div class="bio-progress-bar bio-progress-2">
+                            <span class="num_caret" data-number="99">99%</span>
+                        </div>
+                    </div>
+                    <div class="bio-stats">
+                        <h3>CSS</h3>
+                        <div class="bio-progress-bar bio-progress-3">
+                            <span class="num_caret" data-number="90">90%</span>
+                        </div>
+                    </div>
+                    <div class="bio-stats">
+                        <h3>JAVASCRIPT</h3>
+                        <div class="bio-progress-bar bio-progress-4">
+                            <span class="num_caret" data-number="85">85%</span>
+                        </div>
+                    </div>
+                    <div class="bio-stats">
+                        <h3>C</h3>
+                        <div class="bio-progress-bar bio-progress-5">
+                            <span class="num_caret" data-number="70">70%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bio-data-btn">
+                    <a href="#" class="btn">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================
+    Protfolio Section Start
+    ===================== -->
+    <section class="section section-portfolio" id="portfolio-section">
+        <div class="container">
+            <h2 class="common-heading">Latest Work</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum architecto deleniti, quam iure illum error nihil dignissimos odit.
+            </p>
+        </div>
+
+        <div class="p-btns">
+            <div class="btn p-btn" data-btn-num="1">website</div>
+            <div class="btn p-btn" data-btn-num="2">youtube</div>
+            <div class="btn p-btn" data-btn-num="3">design</div>
+        </div>
+
+        <div class="container grid grid-three-column portfolio-images">
+            <div class="img-overlay p-btn--1" >
+                <img src="images/folio/1.jpg" alt="portfolio images" loading="lazy"/>
+                <div class="overlay">
+                    <a href="http://charcounter.thapaonlineclass.com/" target="_blank"  class="common-heading">Project 1</a>
+                </div>
+            </div>
+      
+            <div class="img-overlay p-btn--3">
+                <img src="images/folio/4.jpg" alt="portfolio images " loading="lazy"/>
+                <div class="overlay">
+                   <a href="https://www.thapatechnical.com/" target="_blank"  class="common-heading">Project 2</a>
+                </div>
+            </div>
+      
+            <div class="img-overlay p-btn--1">
+                <img src="images/folio/3.jpg" alt="portfolio images "  loading="lazy"/>
+                <div class="overlay">
+                   <a href="" target="_blank"  class="common-heading">Project 3</a>
+                </div>
+            </div>
+            <div class="img-overlay p-btn--1 p-btn--2">
+                <img src="images/folio/4.jpg" alt="portfolio images " loading="lazy" />
+                <div class="overlay">
+                   <a href="" target="_blank"  class="common-heading">Project 4</a>
+                </div>
+            </div>
+            <div class="img-overlay p-btn--2">
+                <img src="images/folio/5.jpg" alt="portfolio images "  loading="lazy"/>
+                <div class="overlay">
+                   <a href="" target="_blank"  class="common-heading">Project 5</a>
+                </div>
+            </div>
+            <div class="img-overlay p-btn--1">
+                <img src="images/folio/1.jpg" alt="portfolio images "  loading="lazy"/>
+                <div class="overlay">
+                   <a href="" target="_blank"  class="common-heading">Project 6</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =====================
+    Our Work Counter Section Start
+    ===================== -->
+
+    <section class="section section-work-data">
+        <div class="container grid grid-four-column">
+            <div>
+                <h2 class="counter-numbers" data-number="2000">0+</h2>
+                <p>Project Completed</p>
+            </div>
+            <div>
+                <h2 class="counter-numbers" data-number="6000">0+</h2>
+                <p>Happy Clients</p>
+            </div>
+            <div>
+                <h2 class="counter-numbers" data-number="5000">0+</h2>
+                <p>Cups of Coffee</p>
+            </div>
+            <div>
+                <h2 class="counter-numbers" data-number="3000">0+</h2>
+                <p>Real Professionals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================
+    Our Services Section Start
+    ===================== -->
+
+    <section class="section section-services">
+        <div class="container">
+            <h2 class="common-heading">Services Offers</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat eum perferendis neque optio. Aspernatur?
+            </p>
+        </div>
+
+        <!-- sesrvices offers card -->
+        <div class="container grid grid-three-column">
+            <div class="service-box">
+                <ion-icon name="desktop-outline" class="service-icon"></ion-icon>
+                <h3>Web Design</h3>
+                <p>
+                    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa adipisci architecto placeat quos earum vel possimus ipsum recusandae mollitia veritatis, vitae libero temporibus consequatur?"
+                </p>
+            </div>
+
+            <div class="service-box">
+                <ion-icon name="logo-react" class="service-icon"></ion-icon>
+                <h3>Web development</h3>
+                <p>
+                    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa adipisci architecto placeat quos earum vel possimus ipsum recusandae mollitia veritatis, vitae libero temporibus consequatur?"
+                </p>
+            </div>
+
+            <div class="service-box">
+                <ion-icon name="camera-outline" class="service-icon"></ion-icon>
+                <h3>photography</h3>
+                <p>
+                    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa adipisci architecto placeat quos earum vel possimus ipsum recusandae mollitia veritatis, vitae libero temporibus consequatur?"
+                </p>
+            </div>
+
+            <div class="service-box">
+                <ion-icon name="phone-portrait-outline" class="service-icon"></ion-icon>
+                <h3>mobile apps</h3>
+                <p>
+                    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa adipisci architecto placeat quos earum vel possimus ipsum recusandae mollitia veritatis, vitae libero temporibus consequatur?"
+                </p>
+            </div>
+
+            <div class="service-box">
+                <ion-icon name="globe-outline" class="service-icon"></ion-icon>
+                <h3>apps interface</h3>
+                <p>
+                    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa adipisci architecto placeat quos earum vel possimus ipsum recusandae mollitia veritatis, vitae libero temporibus consequatur?"
+                </p>
+            </div>
+
+            <div class="service-box">
+                <ion-icon name="images-outline" class="service-icon"></ion-icon>
+                <h3>graphic Design</h3>
+                <p>
+                    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis culpa adipisci architecto placeat quos earum vel possimus ipsum recusandae mollitia veritatis, vitae libero temporibus consequatur?"
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =====================
+    Our Testimonial Section Start
+    ===================== -->
+
+    <section class="section section-testimonial">
+        <div class="container">
+            <h2 class="common-heading">Happy Client Works</h2>
+        </div>
+        <!-- Swiper -->
+        <div class="swiper mySwiper container">
+            <div class="swiper-wrapper">
+                <!-- section start -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/a.jpg" alt="client review">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section end -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/b.jpg" alt="client review" loading="lazy">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section end -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/c.jpg" alt="client review" loading="lazy">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section end -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/d.jpg" alt="client review" loading="lazy">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section end -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/e.jpg" alt="client review" loading="lazy">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section end -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/f.jpg" alt="client review" loading="lazy">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section end -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/g.jpg" alt="client review" loading="lazy">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section end -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/h.jpg" alt="client review" loading="lazy">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section end -->
+                <div class="swiper-slide">
+                    <div class="swiper-client-msg">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus quod sunt at quae deleniti corrupti, sit incidunt neque explicabo nihil deserunt culpa dolorum delectus in et quibusdam quisquam.
+                        </p>
+                    </div>
+                    <div class="swiper-client-data grid grid-two-column">
+                        <figure>
+                            <img src="images/clients/d.jpg" alt="client review" loading="lazy">
+                        </figure>
+                        <div class="client-data-details">
+                            <p>Divyaveer</p>
+                            <p>Entreprenur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- =====================
+    Our Freelancing Section Start
+      ===================== -->
+
+    <section class="section section-freelancing">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2>I am <span>available</span> for freelancing</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum suscipit voluptate quis voluptates dolorem.
+            </p>
+            <a href="/contact.html" class="btn">Hire Me</a>
+        </div>
+    </section>
+
+    <!-- =====================
+    Our Contact Us Section Start
+    ===================== -->
+
+    <section class="section section-contact">
+        <div class="container">
+            <h2 class="common-heading">Contact Us</h2>
+        </div>
+
+        <div class="section-contact-main contact-container">
+            <form action="https://formspree.io/f/meqwonky" method="POST">
+                <div class="grid grid-two-column">
+                    <div>
+                        <label for="username"></label>
+                        <input type="text" name="username" placeholder="Username" id="username" required autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="email"></label>
+                        <input type="email" name="email" placeholder="demo@gmail.com" id="email" autocomplete="off" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="subject"></label>
+                    <input type="text" name="subject" placeholder="subject" id="subject" autocomplete="off" required>
+                </div>
+                <div>
+                    <label for="textarea"></label>
+                    <textarea name="textaresa" id="textarea" cols="30" rows="10" autocomplete="off" required minlength="5" placeholder="Write your Message Over Here! Please Try, it really works......."></textarea>
+                </div>
+                <div>
+                    <input type="submit" name="submit" id="submit" class="btn" value="send Message" autocomplete="off" required>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- =====================
+    Our Footer Section Start
+    ===================== -->
+
+    <footer class="section section-footer footer">
+        <div class="container grid grid-four-column">
+            <div class="f-about">
+                <h3>About</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed et adipisci modi perferendis, rem est dolorum aliquid odit rerum inventore eveniet placeat nam temporibus dolore ratione sint amet? Quae, fuga?
+                </p>
+            </div>
+            <!-- end -->
+            <div class="f-links">
+                <h3>Links</h3>
+                <ul>
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">About</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Services</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end -->
+            <div class="f-services">
+                <h3>Services</h3>
+                <ul>
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Web Design</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Web Development</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Web Design</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Mern Project</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Online Classes</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Youtube Courses</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end -->
+            <div class="f-address">
+                <h3>Have a Question</h3>
+                <address>
+                    <div>
+                        <p>
+                            <span><ion-icon name="location-outline"></ion-icon></span>
+                            Ahmedabard, Gujarat, India
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <p>
+                            <span><ion-icon name="call-outline"></ion-icon></span>
+                            <a href="tel:+918156076678">+91 8156076678</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p>
+                            <span><ion-icon name="mail-outline"></ion-icon></span>
+                            <a href="mailto:divyaveerkumar@gmail.com">info@divyaveerkumar.com</a>
+                        </p>
+                    </div>
+                </address>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="f-social-icons">
+                <a href="#" target="_divyaveer">
+                    <ion-icon class="icons" name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" target="_divyaveer">
+                    <ion-icon class="icons" name="logo-discord"></ion-icon>
+                </a>
+
+                <a href="#" target="_divyaveer">
+                    <ion-icon class="icons" name="logo-youtube"></ion-icon>
+                </a>
+            </div>
+            
+            <div class="f-credits">
+                <p>
+                    Copyright 2022 all rights reserved | This template is made with ❤. by -- ' DAKS:CODING'!
+                </p>
+            </div>
+        </div>
+        
+    </footer>
+
+    <!-- =====================
+    Our JavaScript Section Start
+    ===================== -->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Index Code Starts -->
+    <script>
+        const heroSection = document.querySelector('.section-hero');
+
+// ==============================
+// Creating a Responsive Navbar component
+// ==============================
+
+const header = document.querySelector('.header');
+const mobile_nav = document.querySelector('.mobile-navbar-btn');
+
+mobile_nav.addEventListener('click', () => {
+    header.classList.toggle('active');
+}); 
+
+// ==============================
+// Creating a Sticky Responsive Navbar component
+// ==============================
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        const ent = entries[0];
+        // console.log(ent);
+        !ent.isIntersecting
+            ? document.body.classList.add('sticky')
+            : document.body.classList.remove('sticky');
+    },
+    {
+        root: null,
+        threshold: 0,
+    }
+);
+
+observer.observe(heroSection);
+
+// ==============================
+// Creating a Portfolio tabbed component
+// ==============================
+
+const p_btns = document.querySelector('.p-btns');
+const p_btn = document.querySelectorAll('.p-btn');
+const p_img_elem = document.querySelectorAll('.img-overlay');
+
+p_btns.addEventListener('click', (e) => {
+    const p_btn_clicked = e.target;
+
+    if(!p_btn_clicked.classList.contains('p-btn')) return;
+
+    p_btn.forEach((curElem) => curElem.classList.remove('p-btn-active'));
+
+    p_btn_clicked.classList.add('p-btn-active');
+
+    const btn_num = p_btn_clicked.dataset.btnNum;
+
+    const img_active = document.querySelectorAll(`.p-btn--${btn_num}`);
+
+    p_img_elem.forEach((curElem) => curElem.classList.add('p-image-not-active'));
+
+    img_active.forEach((curElem) => curElem.classList.remove('p-image-not-active'));
+});
+
+
+// Media Query for Swiper Section in JS :------
+const myJsmedia = (widthSize) => {
+    if(widthSize.matches){
+        new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false, 
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }
+    else{
+        new Swiper(".mySwiper", {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false, 
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }
+};
+
+const widthSize = window.matchMedia('(max-width: 780px)');
+// Call listener function at run time
+myJsmedia(widthSize);
+// Attach listener function on state changes
+widthSize.addEventListener('change', myJsmedia);
+
+
+// scroll to top button
+
+
+const footerElem = document.querySelector('.section-footer');
+
+const scrollElement = document.createElement("div");
+scrollElement.classList.add("scrollTop-style");
+
+scrollElement.innerHTML = `<ion-icon name="arrow-up-outline" class="scroll-top"></ion-icon>`;
+
+footerElem.after(scrollElement);
+
+const scrollTop = () => {
+    heroSection.scrollIntoView({behavior: "smooth"});
+};
+
+scrollElement.addEventListener('click', scrollTop, {passive: true});
+
+// smooth scrolling effects
+
+const portfolioSec = document.querySelector('.section-portfolio');
+const contactSec = document.querySelector('.section-contact');
+
+document.querySelector('.portfolio-link').addEventListener('click', () => {
+    portfolioSec.scrollIntoView({behavior: "smooth"});
+});
+
+document.querySelector('.hireme-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    contactSec.scrollIntoView({behavior: "smooth"});
+});
+
+
+//Work Section:-----
+const workSection = document.querySelector('.section-work-data');
+const workObserver = new IntersectionObserver(
+    (entries, observer) => {
+        const [entry] = entries;
+        // console.log(entry);
+
+        // if(entry.isIntersecting == false)
+        if(!entry.isIntersecting) return;
+
+        // animate number counter
+
+        const counterNum = document.querySelectorAll('.counter-numbers');
+
+        const speed = 200;
+
+        counterNum.forEach((curElem) => {
+            const updateNumber = () => {
+                const targetNumber = parseInt(curElem.dataset.number);
+                // console.log(targetNumber);
+                const initialNum = parseInt(curElem.innerText);
+                // console.log(initialNum);
+
+                const incrementNumber = Math.trunc(targetNumber / speed);
+                // console.log(incrementNumber);
+
+                if(initialNum < targetNumber){
+                    curElem.innerText = `${initialNum + incrementNumber}+`;
+
+                    setTimeout(updateNumber, 10);
+                }
+            };
+
+            updateNumber();
+        });
+
+        observer.unobserve(workSection);
+    },
+    {
+        root: null,
+        threshold: 0,
+    }
+);
+
+workObserver.observe(workSection);
+
+// Analog Clock section start===============
+
+setInterval(setClock, 1000);
+
+const hourHand = document.querySelector('[data-hour-hand]');
+const minuteHand = document.querySelector('[data-minute-hand]');
+const secondHand = document.querySelector('[data-second-hand]');
+
+function setClock(){
+    const currentDate = new Date();
+    const secondRatio = currentDate.getSeconds() / 60;
+    const minuteRatio = (secondRatio + currentDate.getMinutes()) / 60;
+    const hourRatio = (minuteRatio + currentDate.getHours()) / 12;
+
+    setRotation(secondHand, secondRatio);
+    setRotation(minuteHand, minuteRatio);
+    setRotation(hourHand, hourRatio);
+}
+
+function setRotation(element, rotationRatio){
+    element.style.setProperty('--rotation', rotationRatio * 360);
+}
+
+setClock();
+
+
+//BioDta Progressbar Section:-----
+
+const bio_data_Section = document.querySelector('.bio-data-stats') 
+const bio_data_Observer = new IntersectionObserver(
+    (entries, observer) => {
+        const [entry] = entries;
+
+        if(!entry.isIntersecting) return;
+
+        const counterNum = document.querySelectorAll('.bio-progress-bar'); 
+        const numCaret = document.querySelectorAll(".num_caret");
+
+        var numsArr = [80, 99, 90, 85, 70];
+        var i = 0;
+
+        counterNum.forEach((curElem) => {
+            curElem.classList.add('progress');
+        });
+
+ 
+        observer.unobserve(bio_dataSection);
+    },
+    {
+        root: null,
+        threshold: 0,
+    }
+);
+
+bio_data_Observer.observe(bio_data_Section);
+
+    </script>
+
+    <!-- Animation Section Starts -->
+    <script>
+        const bioStates = document.querySelector('.bio-data-stats');
+const bioProgress = new IntersectionObserver(
+    (entries) => {
+        const entr = entries[0];
+        // console.log(ent);
+        const bioProgressBar = document.querySelector('.bio-progress-bar');
+        const bioProgress2 = document.querySelector('.bio-progress-2');
+        const bioProgress3 = document.querySelector('.bio-progress-3');
+        const bioProgress4 = document.querySelector('.bio-progress-4');
+        const bioProgress5 = document.querySelector('.bio-progress-5');
+
+        entr.isIntersecting
+            ? bioProgressBar.classList.add('progress')
+            : bioProgressBar.classList.remove('progress');
+
+        entr.isIntersecting
+            ? bioProgress2.classList.add('progress')
+            : bioProgress2.classList.remove('progress');
+
+        entr.isIntersecting
+            ? bioProgress3.classList.add('progress')
+            : bioProgress3.classList.remove('progress');
+
+        entr.isIntersecting
+            ? bioProgress4.classList.add('progress')
+            : bioProgress4.classList.remove('progress');
+
+        entr.isIntersecting
+            ? bioProgress5.classList.add('progress')
+            : bioProgress5.classList.remove('progress');
+    },
+    {
+        root: null,
+        threshold: 0,
+    }
+);
+
+bioProgress.observe(bioStates);
+    </script>
+</body>
+</html>

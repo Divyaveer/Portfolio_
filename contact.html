@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Page</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <!-- =====================
+    Header Section Start
+    ===================== -->
+    <header class="header">
+        <img src="images/Logo2.png" alt="Our main logo" class="logo">
+
+        <nav class="navbar">
+            <ul class="navbar-lists">
+                <li><a href="https://divyaveer.github.io/portfolio_DAKS/index.html" class="navbar-link home-link">Home</a></li>
+                <li><a href="https://divyaveer.github.io/portfolio_DAKS/about.html" class="navbar-link about-link">About</a></li>
+                <li><a href="https://divyaveer.github.io/portfolio_DAKS/service.html" class="navbar-link service-link">Services</a></li>
+                <li><a href="#portfolio" class="navbar-link portfolio-link">Portfolio</a></li>
+                <li>
+                    <a href="https://divyaveer.github.io/portfolio_DAKS/contact.html" class="navbar-link contact-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile-navbar-btn">
+            <ion-icon class="mobile-nav-icon" name="menu-outline"></ion-icon>
+            <ion-icon class="mobile-nav-icon" name="close-outline"></ion-icon>
+        </div>
+    </header>
+
+    <!-- =====================
+    Our Contact Us Section Start
+    ===================== -->
+
+    <section class="section section-contact">
+        <div class="container">
+            <h2 class="common-heading">Contact Us</h2>
+        </div>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2815.6751673258345!2d72.5310299!3d23.0467934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8456837b2cab%3A0x77611cc3fa7f8cd6!2sHimalaya%20Mall!5e1!3m2!1sen!2sin!4v1674230867851!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div class="section-contact-main contact-container">
+            <form action="https://formspree.io/f/meqwonky" method="POST">
+                <div class="grid grid-two-column">
+                    <div>
+                        <label for="username"></label>
+                        <input type="text" name="username" placeholder="Username" id="username" required autocomplete="off">
+                    </div>
+                    <div>
+                        <label for="email"></label>
+                        <input type="email" name="email" placeholder="demo@gmail.com" id="email" autocomplete="off" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="subject"></label>
+                    <input type="text" name="subject" placeholder="subject" id="subject" autocomplete="off" required>
+                </div>
+                <div>
+                    <label for="textarea"></label>
+                    <textarea name="textaresa" id="textarea" cols="30" rows="10" autocomplete="off" required minlength="5" placeholder="Write your Message Over Here!"></textarea>
+                </div>
+                <div>
+                    <input type="submit" name="submit" id="submit" class="btn" value="send Message" autocomplete="off" required>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- =====================
+    Our Footer Section Start
+    ===================== -->
+
+    <footer class="section section-footer footer">
+        <div class="container grid grid-four-column">
+            <div class="f-about">
+                <h3>About</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed et adipisci modi perferendis, rem est dolorum aliquid odit rerum inventore eveniet placeat nam temporibus dolore ratione sint amet? Quae, fuga?
+                </p>
+            </div>
+            <!-- end -->
+            <div class="f-links">
+                <h3>Links</h3>
+                <ul>
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">About</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Services</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Portfolio</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end -->
+            <div class="f-services">
+                <h3>Services</h3>
+                <ul>
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Web Design</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Web Development</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Web Design</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Mern Project</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Online Classes</a>
+                    </li>
+
+                    <li>
+                        <span><ion-icon name="arrow-forward-outline"></ion-icon></span><a href="#">Youtube Courses</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end -->
+            <div class="f-address">
+                <h3>Have a Question</h3>
+                <address>
+                    <div>
+                        <p>
+                            <span><ion-icon name="location-outline"></ion-icon></span>
+                            Ahmedabard, Gujarat, India
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <p>
+                            <span><ion-icon name="call-outline"></ion-icon></span>
+                            <a href="tel:+918156076678">+91 8156076678</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p>
+                            <span><ion-icon name="mail-outline"></ion-icon></span>
+                            <a href="mailto:divyaveerkumar@gmail.com">info@divyaveerkumar.com</a>
+                        </p>
+                    </div>
+                </address>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="f-social-icons">
+                <a href="#" target="_divyaveer">
+                    <ion-icon class="icons" name="logo-instagram"></ion-icon>
+                </a>
+
+                <a href="#" target="_divyaveer">
+                    <ion-icon class="icons" name="logo-discord"></ion-icon>
+                </a>
+
+                <a href="#" target="_divyaveer">
+                    <ion-icon class="icons" name="logo-youtube"></ion-icon>
+                </a>
+            </div>
+            
+            <div class="f-credits">
+                <p>
+                    Copyright 2022 all rights reserved | This template is made with ❤. by -- ' DAKS:CODING'!
+                </p>
+            </div>
+        </div>
+        
+    </footer>
+
+    <!-- =====================
+    Our JavaScript Section Start
+    ===================== -->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+</body>
+</html>
