@@ -1103,14 +1103,14 @@ Media Queries
         font-size: 3.2rem;
     }
 
-    .active .navbar{
+    .header.active .navbar{
         transform: translateX(0%);
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
     }
 
-    .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"]{
+    .header.active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"]{
         display: none;
     }
 
