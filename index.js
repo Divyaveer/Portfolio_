@@ -222,7 +222,7 @@ const bio_data_Observer = new IntersectionObserver(
         });
 
  
-        observer.unobserve(bio_dataSection);
+        observer.unobserve(bio_data_Section);
     },
     {
         root: null,
