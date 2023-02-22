@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Text Animation Section Starts */
+.section-text-animate{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.section-text-animate .container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.section-text-animate .container .text{
+    position: relative;
+    color: #4070F4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+body.active .section-text-animate .container .text{
+    color: #ffd700;
+}
+
+.section-text-animate .container .text.first-text{
+    color: #000;
+}
+
+body.active .section-text-animate .container .text.first-text{
+    color: #fff;
+}
+
+.section-text-animate .container .text.sec-text::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #f9f9ff;  /* for Dark Mode #010718 */
+    border-left: 2px solid #4070F4;
+    animation: animate 4s steps(50) infinite;
+}
+
+body.active .section-text-animate .container .text.sec-text::before{
+    border-left-color: #ffd700;
+}
+
+body.active .section-text-animate .container .text.sec-text::before{
+    background: #06043e;
+}
+
+@keyframes animate {
+    40%, 60%{
+        left: calc(100% + 4px);
+    }
+    100%{
+        left: 0;
+    }
+}
+
+/* Media Querys are as Follows */
+@media (max-width: 980px) {
+    .section-text-animate .container .text{
+        font-size: 15px;
+    }
+}
