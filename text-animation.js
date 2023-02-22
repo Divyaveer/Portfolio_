@@ -16,4 +16,4 @@ const textLoad = () => {
 };
 
 textLoad();
-setInterval(textLoad(), 16000);
+setInterval(textLoad, 24000);
