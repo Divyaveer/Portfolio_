@@ -8,12 +8,15 @@ const textLoad = () => {
         text.textContent = 'a Full Stack Web Developer.';
     }, 4000);
     setTimeout(() => {
-        text.textContent = 'a Youtuber.';
+        text.textContent = 'a Programmer.';
     }, 8000);
     setTimeout(() => {
-        text.textContent = 'a Freelancer.';
+        text.textContent = 'a Youtuber.';
     }, 12000);
+    setTimeout(() => {
+        text.textContent = 'a Freelancer.';
+    }, 16000);
 };
 
 textLoad();
-setInterval(textLoad, 24000);
+setInterval(textLoad, 40000);
