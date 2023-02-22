@@ -18,6 +18,14 @@ body.active .navbar-link:hover{
     color: var(--helper);
 }
 
+body.active .mobile-navbar-btn{
+    border-color: #fff;
+}
+
+body.active .mobile-nav-icon{
+    color: #fff;
+}
+
 /* Hero Section Starts */
 body.active .section-hero{
     background: #06043e;
