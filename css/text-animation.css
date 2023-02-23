@@ -58,7 +58,7 @@ body.active .section-text-animate .container .text.first-text{
     width: 100%;
     background: #f9f9ff;  /* for Dark Mode #010718 */
     border-left: 2px solid #4070F4;
-    animation: animate 4s steps(50) infinite;
+    animation: animate 4s steps(30) infinite;
 }
 
 body.active .section-text-animate .container .text.sec-text::before{
