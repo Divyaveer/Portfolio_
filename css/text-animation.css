@@ -32,6 +32,15 @@ body.active .section-text-animate .container .text{
     color: #ffd700;
 }
 
+.section-text-animate .container .text.sec-text{
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+body.active .section-text-animate .container .text.sec-text{
+    text-decoration-color: #fff;
+}
+
 .section-text-animate .container .text.first-text{
     color: #000;
 }
