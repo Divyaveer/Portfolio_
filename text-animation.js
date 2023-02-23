@@ -8,10 +8,10 @@ const textLoad = () => {
         text.textContent = 'a Full Stack Web Developer.';
     }, 4000);
     setTimeout(() => {
-        text.textContent = 'a Programmer.';
+        text.textContent = 'a Youtuber.';
     }, 8000);
     setTimeout(() => {
-        text.textContent = 'a Youtuber.';
+        text.textContent = 'a Blogger.';
     }, 12000);
     setTimeout(() => {
         text.textContent = 'a Freelancer.';
