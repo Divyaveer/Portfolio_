@@ -51,6 +51,10 @@ body.active .resume-data-subsection{
     color: #fff;
 }
 
+body.active .resume-para{
+    color: gold;
+}
+
 /* Bio-Data Section Starts */
 body.active .section-biodata{
     background: #06043e;
