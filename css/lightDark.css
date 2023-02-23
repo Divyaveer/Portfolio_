@@ -32,6 +32,12 @@ body.active .section-hero{
     color: #fff;
 }
 
+body.active .section-hero-data .hero-top-data span{
+    color: #ffd700;
+    font-weight: 900;
+    text-decoration-color: #fff;
+}
+
 body.active .section-hero-data h1{
     color: #fff;
 }
@@ -88,7 +94,7 @@ body.active .section-footer{
     position: absolute;
     top: 70px;
     left: 50px;
-    z-index: 100000;
+    z-index: 998;
 }
 
 .section-darkLight label{
