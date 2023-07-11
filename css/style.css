@@ -887,6 +887,20 @@ Freelancing Section Start
 }
 
 /* =====================
+        New Member
+===================== */
+
+.member-image{
+    height: 30%;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.section-member{
+    height: 350px;
+}
+
+/* =====================
 Contact Us Section Start
 ===================== */
 
